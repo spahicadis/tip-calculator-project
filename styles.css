@@ -2,4 +2,39 @@
     padding: 0;
     margin: 0;
     font-family: Poppins, sans-serif;
-};
+}
+
+body {
+    background-color: rgba(211, 211, 211, 0.196);
+}
+
+.main-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 12rem;
+}
+
+.box-content {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    border: none;
+    padding: 2.5rem;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    background-color: white;
+    border-radius: 12px;
+    row-gap: 0.5rem;
+}
+
+.bill, .tip {
+    height: 2rem;
+    border-radius: 7px;
+    border: 1px solid black;
+}
+
+.buttonAction {
+    padding: 12px;
+    background-color: rgba(17, 145, 17, 0.638);
+    border: none;
+}
