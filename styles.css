@@ -31,10 +31,18 @@ body {
     height: 2rem;
     border-radius: 7px;
     border: 1px solid black;
+    padding-left: 3px;
+    padding-right: 3px;
 }
 
 .buttonAction {
     padding: 12px;
     background-color: rgba(17, 145, 17, 0.638);
     border: none;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.calculatedAmount {
+    font-weight: 600;
 }
