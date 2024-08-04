@@ -59,9 +59,9 @@ tipPercentage.addEventListener('input', function(e) {
 
 //CALCULATE
 function calculate() {
- let formula = (parseFloat(tip) / 100) * parseFloat(bill) + parseFloat(bill);
- result.innerHTML = formula
- if(formula < 0) {
+calculatedAmount = (parseFloat(tip) / 100) * parseFloat(bill) + parseFloat(bill);
+ result.innerHTML = calculatedAmount;
+ if(calculatedAmount < 0) {
     Toastify({
         text: "Not possbile",
         duration: 3000,
@@ -76,8 +76,8 @@ function calculate() {
         },
         onClick: function(){} // Callback after click
       }).showToast();
-      formula = 0
-      result.innerHTML = formula
+      calculatedAmount = 0
+      result.innerHTML = calculatedAmount
  }
 }
 
