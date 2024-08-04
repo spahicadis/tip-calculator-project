@@ -1,5 +1,5 @@
-import Toastify from 'toastify-js';
-import "toastify-js/src/toastify.css";
+//import Toastify from 'toastify-js';
+//import "toastify-js/src/toastify.css";
 
 //DOM
 const billAmount = document.querySelector('.bill');
@@ -16,18 +16,69 @@ let calculatedAmount = 0;
 //BINDING
 billAmount.addEventListener('input', function(e) {
     bill = e.target.value;
-    console.log(typeof bill);
+    console.log(bill);
+    if (parseFloat(bill) < 0) {
+        Toastify({
+            text: "The value cannot be negative",
+            duration: 3000,
+            destination: "https://github.com/apvarun/toastify-js",
+            newWindow: true,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "center", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+              background: "linear-gradient(to right, #00b09b, #96c93d)",
+            },
+            onClick: function(){} // Callback after click
+          }).showToast();
+    }
 })
 
 tipPercentage.addEventListener('input', function(e) {
     tip = e.target.value;
-    console.log(typeof tip);
+    console.log(tip);
+    if (parseFloat(tip) < 0) {
+        Toastify({
+            text: "The value cannont be negative",
+            duration: 3000,
+            destination: "https://github.com/apvarun/toastify-js",
+            newWindow: true,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "center", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+              background: "linear-gradient(to right, #00b09b, #96c93d)",
+            },
+            onClick: function(){} // Callback after click
+          }).showToast();  
+    }
+
 })
 
 //CALCULATE
 function calculate() {
  let formula = (parseFloat(tip) / 100) * parseFloat(bill) + parseFloat(bill);
  result.innerHTML = formula
+ if(formula < 0) {
+    Toastify({
+        text: "Not possbile",
+        duration: 3000,
+        destination: "https://github.com/apvarun/toastify-js",
+        newWindow: true,
+        close: true,
+        gravity: "bottom", // `top` or `bottom`
+        position: "center", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, #00b09b, #96c93d)",
+        },
+        onClick: function(){} // Callback after click
+      }).showToast();
+      formula = 0
+      result.innerHTML = formula
+ }
 }
 
 calculateButton.addEventListener('click', calculate);
